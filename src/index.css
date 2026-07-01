@@ -1,0 +1,192 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Outfit', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+/* Custom Animations */
+@keyframes blob {
+  0% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+@keyframes gradient-xy {
+  0%, 100% {
+    background-size: 400% 400%;
+    background-position: left center;
+  }
+  50% {
+    background-size: 200% 200%;
+    background-position: right center;
+  }
+}
+
+@keyframes scroll-grid {
+  0% { background-position: 0 0; }
+  100% { background-position: 40px 40px; }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animate-gradient-xy {
+  animation: gradient-xy 15s ease infinite;
+}
+
+.animate-scroll-grid {
+  animation: scroll-grid 3s linear infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+.tech-grid {
+  background-image: linear-gradient(to right, #94a3b8 1px, transparent 1px),
+                    linear-gradient(to bottom, #94a3b8 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 0%, #000 60%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 0%, #000 60%, transparent 100%);
+  opacity: 0.3;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(100px) rotate(0deg) scale(0.8); opacity: 0; }
+  20% { opacity: 0.8; }
+  80% { opacity: 0.8; }
+  100% { transform: translateY(-800px) rotate(360deg) scale(1.2); opacity: 0; }
+}
+
+.animate-float {
+  animation: floatUp 15s linear infinite;
+}
+
+.float-delay-1 { animation-delay: 2s; animation-duration: 12s; }
+.float-delay-2 { animation-delay: 4s; animation-duration: 18s; }
+.float-delay-3 { animation-delay: 1s; animation-duration: 14s; }
+.float-delay-4 { animation-delay: 7s; animation-duration: 16s; }
+.float-delay-5 { animation-delay: 5s; animation-duration: 20s; }
+
+@keyframes aurora-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-aurora-spin {
+  animation: aurora-spin 25s linear infinite;
+}
+
+.animate-aurora-spin-reverse {
+  animation: aurora-spin 30s linear infinite reverse;
+}
+
+@keyframes morph {
+  0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+  100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+}
+
+.animate-morph {
+  animation: morph 8s ease-in-out infinite;
+}
+
+@keyframes speedLines {
+  0% { background-position: 0 0; }
+  100% { background-position: 113.14px 113.14px; }
+}
+
+.bg-speed-stripes {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(59, 130, 246, 0.03),
+    rgba(59, 130, 246, 0.03) 40px,
+    transparent 40px,
+    transparent 80px
+  );
+  background-size: 113.14px 113.14px;
+  animation: speedLines 3s linear infinite;
+}
+
+.bg-speed-stripes-fast {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(147, 197, 253, 0.05),
+    rgba(147, 197, 253, 0.05) 20px,
+    transparent 20px,
+    transparent 40px
+  );
+  background-size: 56.57px 56.57px;
+  animation: speedLines 1.5s linear infinite;
+}
+
+@keyframes sonarWave {
+  0% { transform: scale(0.2); opacity: 0.8; border-width: 6px; }
+  100% { transform: scale(3.5); opacity: 0; border-width: 1px; }
+}
+
+.animate-sonar {
+  animation: sonarWave 4s cubic-bezier(0.1, 0.5, 0.8, 1) infinite;
+}
+
+.sonar-delay-1 { animation-delay: 1s; }
+.sonar-delay-2 { animation-delay: 2s; }
+.sonar-delay-3 { animation-delay: 3s; }
+
+@keyframes tunnel {
+  0% { transform: scale(0.1) rotate(0deg); opacity: 0; }
+  20% { opacity: 0.15; }
+  80% { opacity: 0.15; }
+  100% { transform: scale(3.5) rotate(90deg); opacity: 0; }
+}
+
+.animate-tunnel {
+  animation: tunnel 10s linear infinite;
+}
+
+.tunnel-delay-1 { animation-delay: 2.5s; }
+.tunnel-delay-2 { animation-delay: 5s; }
+.tunnel-delay-3 { animation-delay: 7.5s; }
+
+@keyframes spinDash {
+  100% { transform: rotate(360deg); }
+}
+@keyframes spinDashReverse {
+  100% { transform: rotate(-360deg); }
+}
+.animate-spin-dash-slow {
+  animation: spinDash 40s linear infinite;
+}
+.animate-spin-dash-reverse {
+  animation: spinDashReverse 30s linear infinite;
+}
+.animate-spin-dash-fast {
+  animation: spinDash 15s linear infinite;
+}
+
+@keyframes outrun-drive {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 50px; }
+}
+
+.grid-outrun {
+  background-image: 
+    linear-gradient(to bottom, rgba(59, 130, 246, 0.4) 1px, transparent 1px),
+    linear-gradient(to right, rgba(59, 130, 246, 0.4) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: outrun-drive 1.5s linear infinite;
+}
+
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-ticker {
+  animation: ticker 25s linear infinite;
+}
